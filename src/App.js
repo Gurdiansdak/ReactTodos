@@ -1,25 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header/Header"
+import CreateToDo from './components/createTodo/CreateToDo';
+import ToDo from './components/Todo/Todo';
+
+const todosArray = [
+  {
+    id: 1,
+    title: "Купить бананы",
+    status: false
+  },
+  {
+    id: 2,
+    title: "Купить пепси",
+    status: true
+  },
+  {
+    id: 3,
+    title: "Купить соль",
+    status: false
+  }
+]
+
+
 
 function App() {
+  const newTodos = todosArray.map((item) => <ToDo title={item.title} status={item.status} />)
+  const compleateTodos = todosArray.reduce((acc, item) => acc + item.status, 0)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header todos={todosArray.length} compleateTodos={compleateTodos} />
+      <div className='content'>
+        <CreateToDo />
+        <div className='todosWrapper'>
+          {/* Todo ({title: "Купить соль", id="1"}) */}
+          {newTodos}
+        </div>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+

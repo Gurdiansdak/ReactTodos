@@ -1,0 +1,24 @@
+
+
+
+.item input{
+    width: 430px;
+    border-radius: 8px 0 0 8px;
+    height: 40px;
+    padding: 0 5px;
+    border: 0.1px solid rgb(192, 192, 192);
+    outline: none;
+
+}
+
+.item button{
+    width: 103px;
+    background-color: blueviolet;
+    border-radius: 8px;
+    border: none;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    border-radius: 0px 8px 8px 0px;
+}
+
